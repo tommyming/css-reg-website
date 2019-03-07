@@ -1,0 +1,11 @@
+[
+  {   
+    "name": "BlockchainTalk", 
+    "link": "https://www.eventbrite.com/e/9upio-blockchain-seminar-series-bc1110-blockchain-everyday-application-tickets-54397023963",
+    "imgSrc": "../src/img/event/Blockchain.jpg"
+  },
+  {   
+    "name": "SingingContest",
+    "link": "https://docs.google.com/forms/d/e/1FAIpQLSf78PWx-IpFudo9s8QCBoRZZkX2q1ezQ-vJqZwmg7asxkzopA/viewform",
+    "imgSrc": "../src/img/event/Singcon.jpg" }
+]
