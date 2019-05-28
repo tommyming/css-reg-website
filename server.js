@@ -12,7 +12,7 @@ const eventsRoutes = require('./api/routes/events');
 
 http.createServer(app).listen(80);
 
-mongoose.connect('mongodb://@127.0.0.1:27017/?gssapiServiceName=mongodb/eventdb');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/events');
 
 //Middleware
 app.use(bodyParser.urlencoded({extended: false}));
