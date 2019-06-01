@@ -1,16 +1,15 @@
-const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const upload = require('express-fileupload');
+const fs = require('fs');
 
 const app = express();
 
 const eventsRoutes = require('./api/routes/events');
 
-http.createServer(app).listen(80);
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/events');
 
@@ -20,6 +19,8 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan('dev'));
 app.use(upload());
+
+app.use(express.static(__dirname, { dotfiles: 'allow' } ));
 
 //Routes
 app.use('/events', eventsRoutes);
@@ -37,11 +38,5 @@ app.use((req, res, next) => {
 
 app.use(express.static("dist"));
 
-const PORT = process.env.PORT || 800;
-
-app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
-});
-
-
-
+const port = process.env.PORT || 3000;
+app.listen(port);
