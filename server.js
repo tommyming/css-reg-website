@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const upload = require('express-fileupload');
 const fs = require('fs');
-const http = require('http')
 
 const app = express();
 
@@ -39,6 +38,5 @@ app.use((req, res, next) => {
 
 app.use(express.static("dist"));
 
-httpServer.listen(3000, () => {
-	console.log('HTTP Server running on port 3000');
-});
+const port = process.env.PORT || 3000;
+app.listen(port);
