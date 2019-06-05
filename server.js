@@ -38,5 +38,14 @@ app.use((req, res, next) => {
 
 app.use(express.static("dist"));
 
+const testFolder = '/src/main/main.js';
+const fs = require('fs');
+
+fs.readdir(testFolder, (err, files) => {
+  files.forEach(file => {
+    console.log(file);
+  });
+});
+
 const port = process.env.PORT || 3000;
 app.listen(port);
