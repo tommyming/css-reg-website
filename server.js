@@ -38,6 +38,5 @@ app.use((req, res, next) => {
 
 app.use(express.static("dist"));
 
-fs.readFile('/src/main/main.js', 'utf-8');
 const port = process.env.PORT || 3000;
 app.listen(port);
